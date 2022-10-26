@@ -1,0 +1,28 @@
+//knex.select('title', 'author', 'year')
+//.from('books')
+
+//displays displays user table from database on start server
+//   db.select().table('users')
+//  .then(data=>console.log(data));
+    
+        /*
+    // Load hash from your password DB.
+    bcrypt.compare('password', hash, function(err, res) {
+    // result == true if password === hash
+    console.log('first guess', res)
+    });
+*/
+
+
+    /* ascyn
+    create a hash from a string
+        bcrypt.hash('password', 10, function(err, hash) {
+            console.log(hash);
+        });
+        */
+
+sync
+        const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+
+// Load hash from your password DB.
+bcrypt.compareSync(correctPassword, hash); // true
