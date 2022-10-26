@@ -25,6 +25,7 @@ class Register extends React.Component{
     }
 
     onSubmit = () => {
+              
         fetch('https://aqueous-reef-47818.herokuapp.com/register',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
@@ -37,12 +38,13 @@ class Register extends React.Component{
         .then (res => res.json())
         .then(user => { 
             if(user.id){ 
+                
                 this.props.loadUser(user);
-                //this.props.onRouteChange('home');
+                this.props.onRouteChange('home');
             }else {console.log('on Submit error');}
         })
-        .catch(error => console.log('on Submit error', error)); 
-       
+        .catch(error => console.log('on Submit error')); 
+    
     }
 
     render() {
@@ -84,11 +86,11 @@ class Register extends React.Component{
                             </div>
                         </fieldset>
                         <div className="">
-                            <input 
-                                onClick={this.onSubmit}
-                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
-                                type="submit" 
-                                value="Register"
+                            <input
+                            onClick={this.onSubmit}
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                            type="button" 
+                            value="Register"
                             />
                         </div>
                     </form>

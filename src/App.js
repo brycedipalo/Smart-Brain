@@ -10,7 +10,7 @@ import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
 
-const herokuServer = 'https://aqueous-reef-47818.herokuapp.com/';
+//const herokuServer = 'https://aqueous-reef-47818.herokuapp.com/';
 
 //Particles config
 let config = {
