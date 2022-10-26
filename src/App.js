@@ -10,6 +10,8 @@ import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
 
+const herokuServer = 'https://aqueous-reef-47818.herokuapp.com/';
+
 //Particles config
 let config = {
   num: [1,],
@@ -109,7 +111,7 @@ class App extends Component  {
   //Clarifai returns json file where we apply functions facecalculate then display facebox.
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input }); 
-    fetch('http://localhost:3000/imageurl',{
+    fetch('https://aqueous-reef-47818.herokuapp.com/imageurl',{
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -120,7 +122,7 @@ class App extends Component  {
     .then(json=>{ 
       //updates entries state if there is a response.
       if(json){
-        fetch('http://localhost:3000/image',{
+        fetch('https://aqueous-reef-47818.herokuapp.com/image',{
           method: 'put',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({

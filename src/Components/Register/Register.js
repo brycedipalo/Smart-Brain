@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 class Register extends React.Component{
     constructor(props){
         super(props);
@@ -23,7 +25,7 @@ class Register extends React.Component{
     }
 
     onSubmit = () => {
-        fetch('http://localhost:3000/register',{
+        fetch('https://aqueous-reef-47818.herokuapp.com/register',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -36,7 +38,7 @@ class Register extends React.Component{
         .then(user => { 
             if(user.id){ 
                 this.props.loadUser(user);
-                this.props.onRouteChange('home');
+                //this.props.onRouteChange('home');
             }else {console.log('on Submit error');}
         })
         .catch(error => console.log('on Submit error', error)); 
